@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prestations - Emmanuel Carrière</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+        
+        :root {
+            --primary-blue: #1e40af;
+            --gradient-start: #1e3a8a;
+            --gradient-end: #172554;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            min-height: 100vh;
+        }
+
+        .service-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .tab-button.active {
+            background: rgba(255, 255, 255, 0.1);
+            border-bottom: 2px solid #3B82F6;
+        }
+    </style>
+</head>
+<body class="text-white">
+    <!-- Navigation -->
+    <nav class="container mx-auto px-6 py-4">
+        <div class="flex items-center justify-between">
+            <a href="index.html" class="text-2xl font-bold">Emmanuel Carrière</a>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="index.html" class="hover:text-blue-300 transition">Accueil</a>
+                <a href="#" class="hover:text-blue-300 transition">Prestations</a>
+                <a href="#" class="hover:text-blue-300 transition">Innovations</a>
+                <a href="#presentiel" class="hover:text-blue-300 transition">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Service Types Tabs -->
+    <div class="container mx-auto px-6 py-8">
+        <div class="flex flex-wrap justify-center gap-4 mb-12">
+            <button class="tab-button active px-6 py-3 rounded-lg font-semibold" onclick="showTab('online')">
+                En ligne
+            </button>
+            <button class="tab-button px-6 py-3 rounded-lg font-semibold" onclick="showTab('visio')">
+                En visio
+            </button>
+            <button class="tab-button px-6 py-3 rounded-lg font-semibold" onclick="showTab('presentiel')">
+                En présentiel
+            </button>
+            <button class="tab-button px-6 py-3 rounded-lg font-semibold" onclick="showTab('commande')">
+                Sur commande
+            </button>
+            <button class="tab-button px-6 py-3 rounded-lg font-semibold" onclick="showTab('devis')">
+                Sur devis
+            </button>
+        </div>
+
+        <!-- Online Services Section -->
+        <div id="online" class="tab-content">
+            <div class="service-card p-8 rounded-xl mb-8">
+                <h2 class="text-2xl font-bold mb-4">Avis, conseil et étude du dossier</h2>
+                <div class="flex items-center mb-4">
+                    <span class="text-xl font-semibold">80 €</span>
+                    <span class="mx-2">-</span>
+                    <span>30 minutes</span>
+                </div>
+                <p class="mb-4">C'est une occasion idéale pour profiter d'un accompagnement sur mesure.</p>
+                <p class="mb-4">Cette session vous permettra d'éviter les pièges de l'autodiagnostic, de gagner du temps et de définir des stratégies optimales pour votre bien-être.</p>
+                <p class="mb-6">On adopte une approche qui prend en compte les trois dimensions : physique, mentale et émotionnelle.</p>
+                <button class="bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700 transition">
+                    Prendre rendez-vous
+                </button>
+            </div>
+        </div>
+
+        <!-- Visio Services Section -->
+        <div id="visio" class="tab-content hidden">
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="service-card p-8 rounded-xl">
+                    <h3 class="text-xl font-bold mb-4">Consultation simple</h3>
+                    <p class="mb-4">Analyse du profil, conseils et recommandations</p>
+                    <div class="flex items-center mb-6">
+                        <span class="text-xl font-semibold">170 €</span>
+                        <span class="mx-2">-</span>
+                        <span>60 minutes</span>
+                    </div>
+                    <button class="bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700 transition">
+                        Réserver
+                    </button>
+                </div>
+
+                <div class="service-card p-8 rounded-xl">
+                    <h3 class="text-xl font-bold mb-4">Consultation approfondie</h3>
+                    <p class="mb-4">Étude du profil, du terrain et recommandations</p>
+                    <div class="flex items-center mb-6">
+                        <span class="text-xl font-semibold">250 €</span>
+                        <span class="mx-2">-</span>
+                        <span>90 minutes</span>
+                    </div>
+                    <button class="bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700 transition">
+                        Réserver
+                    </button>
+                </div>
+            </div>
+
+            <!-- Grand Bilan Section -->
+            <div class="service-card p-8 rounded-xl mt-8">
+                <h2 class="text-2xl font-bold mb-6">Le Grand Bilan avec 2 thérapeutes</h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">Version approfondie</h3>
+                        <p class="mb-4">Un parcours en 4 étapes avec 2 experts</p>
+                        <ul class="space-y-4 mb-6">
+                            <li>Étape 1: le Karma et étude du profil - 500 €</li>
+                            <li>Étape 2: Situation actuelle - 500 €</li>
+                            <li>Étape 3: Mission de vie - 500 €</li>
+                            <li>Étape 4: De la libération à l'évolution - 650 €</li>
+                        </ul>
+                        <button class="bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700 transition">
+                            Commencer le parcours
+                        </button>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">Version courte</h3>
+                        <p class="mb-4">Les 4 étapes condensées en 2h</p>
+                        <div class="flex items-center mb-6">
+                            <span class="text-xl font-semibold">1 200 €</span>
+                            <span class="mx-2">-</span>
+                            <span>120 minutes</span>
+                        </div>
+                        <button class="bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700 transition">
+                            Réserver
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Presentiel Section -->
+        <div id="presentiel" class="tab-content hidden">
+            <div class="service-card p-8 rounded-xl text-center">
+                <h2 class="text-2xl font-bold mb-6">Consultations en présentiel</h2>
+                <p class="mb-6">Pour tout renseignement, contactez le secrétariat :</p>
+                <div class="space-y-4">
+                    <p>
+                        <span class="font-semibold">Téléphone :</span> 
+                        <a href="tel:+33609018702" class="text-blue-300 hover:text-blue-400">06 09 01 87 02</a>
+                    </p>
+                    <p>
+                        <span class="font-semibold">Email :</span> 
+                        <a href="mailto:prestations@emmanuelcarriere.com" class="text-blue-300 hover:text-blue-400">prestations@emmanuelcarriere.com</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showTab(tabId) {
+            // Hide all tab content
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.add('hidden');
+            });
+            
+            // Remove active class from all tabs
+            document.querySelectorAll('.tab-button').forEach(button => {
+                button.classList.remove('active');
+            });
+            
+            // Show selected tab content
+            document.getElementById(tabId).classList.remove('hidden');
+            
+            // Add active class to clicked tab
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>

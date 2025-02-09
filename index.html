@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emmanuel Carrière - Expert en Thérapie</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+        
+        :root {
+            --primary-blue: #1e40af;
+            --gradient-start: #1e3a8a;
+            --gradient-end: #172554;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .hero-gradient {
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+        }
+
+        .water-drop {
+            filter: drop-shadow(0 0 10px rgba(59, 130, 246, 0.5));
+        }
+
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #fff;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover:after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="min-h-screen hero-gradient text-white">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="text-2xl font-bold">Emmanuel Carrière</div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="prestation.html" class="nav-link">Prestations</a>
+                    <a href="#" class="nav-link">Innovations</a>
+                    <a href="#" class="nav-link">À propos</a>
+                    <a href="#" class="nav-link">Contactez-nous</a>
+                    <a href="#" class="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition duration-300">
+                        Rendez-vous / conseil
+                    </a>
+                </div>
+            </div>
+        </nav>
+        <div class="container mx-auto px-6 py-16 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-8 md:mb-0">
+                <h1 class="text-5xl font-bold leading-tight mb-6">
+                    Découvrez les secrets de ceux qui vivent en pleine santé
+                </h1>
+                <p class="text-xl mb-8 opacity-90">
+                    Emmanuel Carrière, est un expert de la thérapie qui traite par l'eau informée et les ondes, ayant à son actif 2 découvertes majeures auxquelles vient s'ajouter une exclusivité mondiale.
+                </p>
+                <p class="text-lg mb-8 opacity-80">
+                    Tout symptôme est dû à un désordre informationnel donc une altération de l'eau dans le corps
+                </p>
+                <button class="bg-blue-600 text-white px-8 py-3 rounded-full hover:bg-blue-700 transition duration-300">
+                    Découvrir l'exclusivité mondial
+                </button>
+            </div>
+            <div class="md:w-1/2 relative">
+                <img src="./pic.jpg" alt="Emmanuel Carrière" class="rounded-lg shadow-2xl">
+                
+            </div>
+        </div>
+
+        <!-- Chat Widget -->
+        <div class="fixed bottom-4 right-4 bg-black text-white p-4 rounded-lg shadow-lg">
+            <p class="flex items-center">
+                <span>Bonjour, comment puis-je vous aider ?</span>
+                <span class="ml-2 text-green-500">✓</span>
+            </p>
+            <input type="text" id="chatInput" placeholder="Tapez votre message..." class="w-full p-2 rounded-lg shadow-lg focus:outline-none" />
+            <button id="chatSend" class="flex items-center px-4 py-2 ml-2 bg-blue-600 text-white rounded-lg shadow-lg focus:outline-none">
+
+               <svg class="w-6 h-6 mr-2" viewBox="0 0 640 480">
+                <g fill-rule="evenodd" stroke-width="1pt">
+                    <path fill="#fff" d="M0 0h640v480H0z"/>
+                    <path fill="#00267f" d="M0 0h213.3v480H0z"/>
+                    <path fill="#f31830" d="M426.7 0H640v480H426.7z"/>
+                </g>
+               </svg>
+               Envoyer
+
+               
+            </button>
+        </div>
+
+    
+        <!-- Language Selector -->
+        <div class="fixed bottom-4 left-4">
+            <div class="relative">
+                <button id="languageToggle" class="flex items-center space-x-2 bg-white text-black px-3 py-2 rounded-lg shadow-lg focus:outline-none">
+                    <svg id="selectedFlag" class="w-6 h-6" viewBox="0 0 640 480"></svg>
+                    <span id="selectedLanguage">FR</span>
+                </button>
+                <div id="languageDropdown" class="hidden absolute bottom-full left-0 mb-2 bg-white rounded-lg shadow-lg">
+                    <a href="#" class="flex items-center px-4 py-2 hover:bg-gray-100" data-lang="fr">
+                        <svg class="w-6 h-6 mr-2" viewBox="0 0 640 480">
+                            <g fill-rule="evenodd" stroke-width="1pt">
+                                <path fill="#fff" d="M0 0h640v480H0z"/>
+                                <path fill="#00267f" d="M0 0h213.3v480H0z"/>
+                                <path fill="#f31830" d="M426.7 0H640v480H426.7z"/>
+                            </g>
+                        </svg>
+                        Français
+                    </a>
+                    <a href="#" class="flex items-center px-4 py-2 hover:bg-gray-100" data-lang="en">
+                        <svg class="w-6 h-6 mr-2" viewBox="0 0 640 480">
+                            <path fill="#012169" d="M0 0h640v480H0z"/>
+                            <path fill="#FFF" d="M75 0l244 181L562 0h78v62L400 241l240 178v61h-80L320 301 81 480H0v-60l239-178L0 64V0h75z"/>
+                            <path fill="#C8102E" d="M424 281l216 159v40L369 281h55zm-184 20l6 35L54 480H0l240-179zM640 0v3L391 191l2-44L590 0h50zM0 0l239 176h-60L0 42V0z"/>
+                            <path fill="#FFF" d="M241 0v480h160V0H241zM0 160v160h640V160H0z"/>
+                            <path fill="#C8102E" d="M0 193v96h640v-96H0zM273 0v480h96V0h-96z"/>
+                        </svg>
+                        English
+                    </a>
+                    <a href="#" class="flex items-center px-4 py-2 hover:bg-gray-100" data-lang="es">
+                        <svg class="w-6 h-6 mr-2" viewBox="0 0 640 480">
+                            <path fill="#AA151B" d="M0 0h640v480H0z"/>
+                            <path fill="#F1BF00" d="M0 120h640v240H0z"/>
+                        </svg>
+                        Español
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            // Translations
+            const translations = {
+                fr: {
+                    title: "Emmanuel Carrière - Expert en Thérapie",
+                    navPrestations: "Prestations",
+                    navInnovations: "Innovations",
+                    navAbout: "À propos",
+                    navContact: "Contactez-nous",
+                    navAppointment: "Rendez-vous / conseil",
+                    heroTitle: "Découvrez les secrets de ceux qui vivent en pleine santé",
+                    heroDescription: "Emmanuel Carrière, est un expert de la thérapie qui traite par l'eau informée et les ondes, ayant à son actif 2 découvertes majeures auxquelles vient s'ajouter une exclusivité mondiale.",
+                    heroSubtext: "Tout symptôme est dû à un désordre informationnel donc une altération de l'eau dans le corps",
+                    ctaButton: "Découvrir l'exclusivité mondiale",
+                    chatWidget: "Bonjour, comment puis-je vous aider ?"
+                },
+                en: {
+                    title: "Emmanuel Carrière - Therapy Expert",
+                    navPrestations: "Services",
+                    navInnovations: "Innovations",
+                    navAbout: "About",
+                    navContact: "Contact Us",
+                    navAppointment: "Appointment / Advice",
+                    heroTitle: "Discover the secrets of those living in full health",
+                    heroDescription: "Emmanuel Carrière is a therapy expert who treats with informed water and waves, with 2 major discoveries to his credit, to which is added a world exclusive.",
+                    heroSubtext: "Every symptom is due to an informational disorder, therefore an alteration of water in the body",
+                    ctaButton: "Discover the world exclusive",
+                    chatWidget: "Hello, how can I help you?"
+                },
+                es: {
+                    title: "Emmanuel Carrière - Experto en Terapia",
+                    navPrestations: "Servicios",
+                    navInnovations: "Innovaciones",
+                    navAbout: "Acerca de",
+                    navContact: "Contáctenos",
+                    navAppointment: "Cita / Consejo",
+                    heroTitle: "Descubre los secretos de quienes viven en plena salud",
+                    heroDescription: "Emmanuel Carrière es un experto en terapia que trata con agua informada y ondas, con 2 descubrimientos importantes en su haber, a los que se suma una exclusiva mundial.",
+                    heroSubtext: "Cada síntoma se debe a un desorden informacional, por lo tanto, una alteración del agua en el cuerpo",
+                    ctaButton: "Descubre la exclusiva mundial",
+                    chatWidget: "Hola, ¿cómo puedo ayudarte?"
+                }
+            };
+
+            document.addEventListener('DOMContentLoaded', function() {
+                const languageToggle = document.getElementById('languageToggle');
+                const languageDropdown = document.getElementById('languageDropdown');
+                const selectedFlag = document.getElementById('selectedFlag');
+                const selectedLanguage = document.getElementById('selectedLanguage');
+
+                // Load saved language or default to French
+                let currentLang = localStorage.getItem('language') || 'fr';
+                updateLanguage(currentLang);
+
+                languageToggle.addEventListener('click', function() {
+                    languageDropdown.classList.toggle('hidden');
+                });
+
+                languageDropdown.addEventListener('click', function(e) {
+                    if (e.target.closest('a')) {
+                        e.preventDefault();
+                        const langLink = e.target.closest('a');
+                        const lang = langLink.getAttribute('data-lang');
+                        const flagSvg = langLink.querySelector('svg').outerHTML;
+                        selectedFlag.outerHTML = flagSvg;
+                        selectedFlag = document.getElementById('selectedFlag'); // Reassign after outerHTML change
+                        selectedLanguage.textContent = lang.toUpperCase();
+                        languageDropdown.classList.add('hidden');
+                        
+                        updateLanguage(lang);
+                    }
+                });
+
+                // Close dropdown when clicking outside
+                document.addEventListener('click', function(e) {
+                    if (!languageToggle.contains(e.target) && !languageDropdown.contains(e.target)) {
+                        languageDropdown.classList.add('hidden');
+                    }
+                });
+            });
+
+            function updateLanguage(lang) {
+                localStorage.setItem('language', lang);
+                document.documentElement.lang = lang;
+                document.title = translations[lang].title;
+                
+                // Update navigation
+                document.querySelector('a[href="/prestation.html"]').textContent = translations[lang].navPrestations;
+                document.querySelectorAll('.nav-link')[1].textContent = translations[lang].navInnovations;
+                document.querySelectorAll('.nav-link')[2].textContent = translations[lang].navAbout;
+                document.querySelectorAll('.nav-link')[3].textContent = translations[lang].navContact;
+                document.querySelector('nav a.bg-blue-600').textContent = translations[lang].navAppointment;
+
+                // Update hero section
+                document.querySelector('h1').textContent = translations[lang].heroTitle;
+                document.querySelector('p.text-xl').textContent = translations[lang].heroDescription;
+                document.querySelector('p.text-lg').textContent = translations[lang].heroSubtext;
+                document.querySelector('button.bg-blue-600').textContent = translations[lang].ctaButton;
+
+                // Update chat widget
+                document.querySelector('.fixed.bottom-4.right-4 span').textContent = translations[lang].chatWidget;
+            }
+        </script>
+    </div>
+</body>
+</html>
+    </div>
+</body>
+</html>
